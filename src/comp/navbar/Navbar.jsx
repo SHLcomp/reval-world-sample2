@@ -8,7 +8,7 @@ export const Navbar = () => {
         <span>Reval</span> World
       </h1>
       <ul>
-        <li>Home</li>
+        <Link to='/reval-world-sample2/'></Link><li>Home</li>
         <a href="#ser" className="a"><li>Services</li></a>
         <li>Projects</li>
         <li>About Us</li>

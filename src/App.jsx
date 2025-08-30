@@ -5,7 +5,7 @@ import { Home } from './pages/Home';
 function App() {
   const router = createBrowserRouter([
     {
-      path: '/',
+      path: '/reval-world-sample2/',
       element: <Home/>
     },
 

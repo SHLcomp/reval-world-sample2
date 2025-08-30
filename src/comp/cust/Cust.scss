@@ -23,7 +23,7 @@
             width: 40%;
             height: 3px;
             background: var(--main-gr);
-            top: max(8vh, 11vh);
+            top: min(8vh, 11vh);
             transform-origin: left;
         }
     }
