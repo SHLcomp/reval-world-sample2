@@ -9,21 +9,24 @@
 
     h1 {
         font-family: var(--main-font);
-        text-align: center;
         position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: inline-block;
+        // align-items: center;
+        // justify-content: center;
+        font-size: clamp(1.5rem, 5vw, 3rem);
+        /* responsive font size */
+        line-height: 1.2;
+        /* consistent spacing */
 
-        // writing-mode: vertical-lr;
-        // text-orientation: upright;
         &::after {
             content: '';
-            position: absolute;
+            // position: absolute;
+            display: block;
             width: 40%;
             height: 3px;
             background: var(--main-gr);
-            top: min(8vh, 11vh);
+            margin-top: 0.2em;
+            margin-inline: auto;
             transform-origin: left;
         }
     }
@@ -67,7 +70,8 @@
     .cust {
         h1{
             &::after{
-                top: min(9vh, 11vh);
+                top: min(9vh, 10vh);
+                margin-top: min(20px, 5px);
             }
         }
         .cont {
