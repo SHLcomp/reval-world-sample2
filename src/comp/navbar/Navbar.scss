@@ -9,6 +9,7 @@ nav {
   gap: 30px;
   min-height: 5vh;
   max-height: 40vh;
+  width: 100%;
   padding: 10px;
 
   h1 {
@@ -26,10 +27,6 @@ nav {
     text-align: center;
 
     .dropdown {
-      display: flex;
-      gap: 10px;
-      list-style: none;
-      z-index: 900 !important;
 
       li {
         cursor: pointer;
@@ -84,6 +81,7 @@ nav {
     gap: 0 !important;
     position: relative;
     z-index: 1000;
+
     h1 {
       font-size: 1.2em;
       display: flex;
@@ -92,35 +90,40 @@ nav {
 
     .info {
       font-size: 1.6em;
+      overflow: hidden;
+
       .dropdown {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        opacity: 20%;
-        flex-direction: column;
+
+        box-sizing: border-box;
+        /* include padding inside width */
+        overflow: hidden;
+
+        // display: flex;
+        gap: 10px;
+        list-style: none;
+
         position: absolute;
+        top: 100%;
+        /* right under nav */
+        left: 0;
+        width: 100%;
+        max-width: 100%;
         background: var(--nav-bg);
-        width: 100% !important;
-        min-height: 20vh !important;
-        gap: 5px;
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        left: 500px;
-        top: 100%; 
-        min-height: 5vh;
-        max-height: 40vh;
-        transition: .5s ease;
-        z-index: 1001 !important;
+        gap: 5px;
+
+        /* Hide off-screen without affecting page width */
+        transform: translateX(100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.4s ease, opacity 0.4s ease;
 
         &.show {
-          left: 0px;
+          transform: translateX(0);
           opacity: 1;
-          z-index: 900 !important;
-
-        }
-
-        li {
-          width: 100% !important;
+          pointer-events: auto;
         }
       }
 
