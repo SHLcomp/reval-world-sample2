@@ -4,15 +4,16 @@ nav {
   width: 100%;
   font-family: var(--nav-font-family);
   align-items: center !important;
+  text-align: center;
   background: var(--nav-bg);
   filter: drop-shadow(2px 2px 4px gray);
-  gap: 30px;
   min-height: 5vh;
   max-height: 40vh;
-  width: 100%;
   // max-width: 100%;
   // position: relative;
   padding: 10px;
+  position: fixed;
+  z-index: 10000;
 
   h1 {
     font-family: var(--main-font);
@@ -27,22 +28,27 @@ nav {
     justify-content: center !important;
     align-items: center !important;
     text-align: center;
-    max-width: 100%;
+    min-width: 60vw;
+    // width: 100%;
+    // padding-inline: 70px;
     // position: relative;
 
     .dropdown {
       display: flex;
+      justify-content: center;
+      align-items: center;
       list-style: none;
-      width: 100%;
+      gap: 20px;
       max-width: 100% !important; //solved the screen prblm
       z-index: 900 !important;
+      width: 100% !important;
 
       li {
         cursor: pointer;
-        padding-inline: 10px;
+        //padding-inline: 10px;
         border-radius: 20px;
         padding-block: 10px;
-        width: 100%;
+        width: 100% !important;
         /* fills parent, no extra width */
         min-width: 0;
         /* allows shrinking */
@@ -50,21 +56,20 @@ nav {
         transition: .2s ease;
 
         &:hover {
-          background: var(--main-color);
-          color: white;
+          // background: var(--main-color);
+          color: var(--main-color);
         }
 
         &:hover .a {
-          color: white;
+          color: var(--main-color);
         }
 
         &.clicked {
-          background: var(--main-color);
-          color: white !important;
+          color: var(--main-color);
         }
 
         &.clicked .a {
-          color: white;
+          color: var(--main-color);
         }
       }
     }
@@ -75,6 +80,8 @@ nav {
       list-style: none;
       align-items: center;
       justify-content: center;
+      text-align: center;
+      width: 100%;
 
       #menuBar {
         display: none;
@@ -126,7 +133,6 @@ nav {
       max-width: 100%;
 
       .dropdown {
-
         box-sizing: border-box;
         /* include padding inside width */
         overflow: hidden;
@@ -157,6 +163,7 @@ nav {
         
         li{
           width: 100% !important;
+          text-align: center;
           &.clicked {
           background: transparent !important;
           color: var(--main-color) !important;

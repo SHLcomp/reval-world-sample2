@@ -1,0 +1,98 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: var(--second-color);
+
+    .txt {
+        padding-top: clamp(5vh, 20%, 150px);
+        padding-bottom: 20px;
+        width: clamp(300px, 90%, 100vw);
+        border-bottom: 1px solid;
+        // font-size: 1.2em;
+
+        .enInfo {
+            h1 {
+                font-family: var(--main-font);
+            }
+
+            span {
+                color: var(--main-color);
+                font-weight: 500;
+                font-family: var(--nav-font-family);
+            }
+        }
+
+        .arInfo {
+            h1 {
+                font-family: var(--main-font);
+                font-size: 3em;
+            }
+
+            text-align: right !important;
+
+            span {
+                color: var(--main-color);
+                font-weight: 800;
+                font-family: var(--nav-font-family);
+            }
+        }
+    }
+
+    .exp-txt {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: clamp(20px, 10vh, 2cm);
+
+        .spec {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: clamp(10px, 1.2em, 40px);
+            align-items: center;
+            width: clamp(300px, 90vw, 100vw);
+
+            h2 {
+                // writing-mode: vertical-rl;
+                font-family: var(--main-font);
+            }
+
+            ul {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                list-style: none;
+                gap: clamp(10px, 1.2em, 40px);
+                position: relative;
+                li{
+                    display: flex;
+                    flex-direction: column;
+                    font-family: var(--main-font);
+                    font-weight: 600;
+                    cursor: pointer;
+                    padding: 10px;
+                    font-size: 1.2em;
+                    padding-block: 20px;
+                    flex-wrap: wrap;
+                    word-wrap: break-word;
+                    text-align: center;
+
+                    img{
+                        border-bottom-left-radius: 20%;
+                        border-top-right-radius: 20%;
+                        width: 20vw;
+                        height: 20vh;
+                        max-height: clamp(10vh, 20vh, 30vh);
+
+                    }
+                }
+            }
+        }
+    }
+}

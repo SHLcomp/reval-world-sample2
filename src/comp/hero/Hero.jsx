@@ -10,7 +10,7 @@ export const Hero = () => {
             <div className="sub-text">
                 <p>Ready to bring your dreams to life?</p>
                 <p>Contact us now</p>
-                <Link className='a' to='/contact'><h5 className="ctaH5">Contact</h5></Link>
+                <Link className='a' to='/contact'><h5 className="ctaH5"><i className="fa-brands fa-whatsapp"></i>contact</h5></Link>
             </div>
         </div>
         <div className="hero-img">

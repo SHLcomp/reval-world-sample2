@@ -6,6 +6,7 @@
     flex-direction: column;
     width: 100%;
     overflow-x: hidden;
+    padding-top: 50px;
 
     .top {
         display: flex;
@@ -40,6 +41,11 @@
                 position: relative;
                 max-width: 200px;
                 color: white;
+                background: green;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
             }
         }
 

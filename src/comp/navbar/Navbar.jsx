@@ -15,20 +15,20 @@ export const Navbar = () => {
     switch (locate.pathname){
       case '/reval-world-sample2/': setChooseMenu("Home");
       break;
-      case "/services":
+      case "/reval-world-sample2/services":
         setChooseMenu("Services");
         break;
-      case "/projects":
+      case "/reval-world-sample2/projects":
         setChooseMenu("Projects");
         break;
-      case "/about":
+      case "/reval-world-sample2/about":
         setChooseMenu("About Us");
         break;
-      case "/contact":
+      case "/reval-world-sample2/contact":
         setChooseMenu("Contact");
         break;
       default:
-        setChooseMenu("");
+        setChooseMenu("Home");
     }
   }, [locate]);
 
