@@ -10,6 +10,7 @@ nav {
   min-height: 5vh;
   max-height: 40vh;
   width: 100%;
+  max-width: 100%;
   padding: 10px;
 
   h1 {
@@ -27,12 +28,23 @@ nav {
     text-align: center;
 
     .dropdown {
+      display: flex;
+      gap: 10px;
+      list-style: none;
+      z-index: 900 !important;
 
       li {
         cursor: pointer;
         padding-inline: max(10px, 5px);
         border-radius: 10px;
         padding-block: min(5px, 10px);
+
+
+        width: 100%;
+        /* fills parent, no extra width */
+        min-width: 0;
+        /* allows shrinking */
+        box-sizing: border-box;
 
         &:hover {
           background: var(--main-color);
@@ -83,9 +95,15 @@ nav {
     z-index: 1000;
 
     h1 {
-      font-size: 1.2em;
+      font-size: smaller;
       display: flex;
       flex-direction: column;
+
+      span {
+
+        font-size: 22px !important;
+        filter: drop-shadow(2px 2px 4px);
+      }
     }
 
     .info {
