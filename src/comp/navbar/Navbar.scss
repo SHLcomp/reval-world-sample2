@@ -14,6 +14,7 @@ nav {
   padding: 10px;
   position: fixed;
   z-index: 10000;
+  font-size: clamp(14px, 2vw, 22px); //here
 
   h1 {
     font-family: var(--main-font);
@@ -54,6 +55,7 @@ nav {
         /* allows shrinking */
         box-sizing: border-box;
         transition: .2s ease;
+        font-size: clamp(23px, 1.6vw, 20px);
 
         &:hover {
           // background: var(--main-color);
@@ -93,6 +95,7 @@ nav {
         padding-inline: 10px;
         border-radius: 10px;
         cursor: pointer;
+        font-size: clamp(10px, 1.4vw, 18px);
 
         &:nth-last-child(2) {
           background-color: green;
@@ -155,32 +158,35 @@ nav {
         opacity: 0;
         pointer-events: none;
         transition: transform 0.4s ease, opacity 0.4s ease;
+
         &.show {
           transform: translateX(0);
           opacity: 1;
           pointer-events: auto;
         }
-        
-        li{
+
+        li {
           width: 100% !important;
           text-align: center;
+
           &.clicked {
-          background: transparent !important;
-          color: var(--main-color) !important;
-        }
+            background: transparent !important;
+            color: var(--main-color) !important;
+          }
 
-        &.clicked .a {
-          background: transparent !important;
-          color: var(--main-color);
-        }
-        &:hover {
-          background: transparent !important;
-          color: black;
-        }
+          &.clicked .a {
+            background: transparent !important;
+            color: var(--main-color);
+          }
 
-        &:hover .a {
-          color: black;
-        }
+          &:hover {
+            background: transparent !important;
+            color: black;
+          }
+
+          &:hover .a {
+            color: black;
+          }
         }
       }
 
