@@ -1,14 +1,37 @@
 import "./Navbar.scss";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [chooseMenu, setChooseMenu] = useState('Home');
+  const locate = useLocation();
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
-    console.log("heyy");
   };
+
+  useEffect(()=>{
+    switch (locate.pathname){
+      case '/reval-world-sample2/': setChooseMenu("Home");
+      break;
+      case "/services":
+        setChooseMenu("Services");
+        break;
+      case "/projects":
+        setChooseMenu("Projects");
+        break;
+      case "/about":
+        setChooseMenu("About Us");
+        break;
+      case "/contact":
+        setChooseMenu("Contact");
+        break;
+      default:
+        setChooseMenu("");
+    }
+  }, [locate]);
+
 
   return (
     <nav>
@@ -17,11 +40,11 @@ export const Navbar = () => {
       </h1>
       <div className="info">
         <ul className={`dropdown ${menuOpen ? "show" : ""}`}>
-          <li><Link className="a" to="/reval-world-sample2/">Home</Link></li>
-          <li><a href="#ser" className="a">Services</a></li>
-          <li>Projects</li>
-          <li>About Us</li>
-          <li>Contact</li>
+          <li className={chooseMenu === "Home" ? "clicked" : ""}><Link className="a" to="/reval-world-sample2/">Home</Link></li>
+          <li className={chooseMenu === "Services" ? "clicked" : ""}><a href="#ser" className="a">Services</a></li>
+          <li className={chooseMenu === "Projects" ? "clicked" : ""}> <Link className="a" to='/reval-world-sample2/projects'> Projects</Link></li>
+          <li className={chooseMenu === "About Us" ? "clicked" : ""}> <Link className="a" to='/reval-world-sample2/about'> About Us</Link></li>
+          <li className={chooseMenu === "Contact" ? "clicked" : ""}> <Link className="a" to='/reval-world-sample2/contact'>Contact</Link> </li>
         </ul>
         <ul className="contact-info">
           <li><i className="fa-solid fa-phone"></i>+966 123456789</li>

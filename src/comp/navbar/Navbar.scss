@@ -10,7 +10,6 @@ nav {
   min-height: 5vh;
   max-height: 40vh;
   width: 100%;
-  max-width: 100%;
   padding: 10px;
 
   h1 {
@@ -29,22 +28,21 @@ nav {
 
     .dropdown {
       display: flex;
-      gap: 10px;
       list-style: none;
+      width: 100%;
       z-index: 900 !important;
 
       li {
         cursor: pointer;
-        padding-inline: max(10px, 5px);
-        border-radius: 10px;
-        padding-block: min(5px, 10px);
-
-
+        padding-inline: 10px;
+        border-radius: 20px;
+        padding-block: 10px;
         width: 100%;
         /* fills parent, no extra width */
         min-width: 0;
         /* allows shrinking */
         box-sizing: border-box;
+        transition: .2s ease;
 
         &:hover {
           background: var(--main-color);
@@ -52,6 +50,15 @@ nav {
         }
 
         &:hover .a {
+          color: white;
+        }
+
+        &.clicked {
+          background: var(--main-color);
+          color: white !important;
+        }
+
+        &.clicked .a {
           color: white;
         }
       }
@@ -92,6 +99,7 @@ nav {
     align-items: center !important;
     gap: 0 !important;
     position: relative;
+    max-width: 100%;
     z-index: 1000;
 
     h1 {
@@ -109,39 +117,57 @@ nav {
     .info {
       font-size: 1.6em;
       overflow: hidden;
+      max-width: 100%;
 
       .dropdown {
 
         box-sizing: border-box;
         /* include padding inside width */
         overflow: hidden;
-
         // display: flex;
         gap: 10px;
         list-style: none;
-
         position: absolute;
         top: 100%;
         /* right under nav */
-        left: 0;
+        left: 0 !important;
         width: 100%;
-        max-width: 100%;
+        max-width: 100% !important;
         background: var(--nav-bg);
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 5px;
-
         /* Hide off-screen without affecting page width */
         transform: translateX(100%);
         opacity: 0;
         pointer-events: none;
         transition: transform 0.4s ease, opacity 0.4s ease;
-
         &.show {
           transform: translateX(0);
           opacity: 1;
           pointer-events: auto;
+        }
+        
+        li{
+          width: 100% !important;
+          &.clicked {
+          background: transparent !important;
+          color: var(--main-color) !important;
+        }
+
+        &.clicked .a {
+          background: transparent !important;
+          color: var(--main-color);
+        }
+        &:hover {
+          background: transparent !important;
+          color: black;
+        }
+
+        &:hover .a {
+          color: black;
+        }
         }
       }
 
@@ -151,8 +177,8 @@ nav {
         padding-top: 10px;
 
         li {
-          max-width: 140px;
-          width: 115px;
+          max-width: 100%;
+          width: 100%;
           min-width: 100px;
         }
 

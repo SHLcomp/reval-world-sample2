@@ -15,6 +15,7 @@ export const Hero = () => {
         </div>
         <div className="hero-img">
             <img src={logo} alt="" loading='lazy' />
+            {/* either this or just import the img dircetly not via Js */}
         </div>
     </div>
   )
