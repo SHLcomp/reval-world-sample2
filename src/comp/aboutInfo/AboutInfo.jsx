@@ -15,7 +15,7 @@ export const AboutInfo = () => {
           </p>
           <p>
             Our experience extends up to <span>more than 20 years</span> in the
-            field and we have directs dealings with European, American, and
+            field and we have direct dealings with European, American, and
             Chinese leading companies, as we gurantee our products and satisfy
             our customer's needs regarding <span>after sale service</span>.
           </p>
