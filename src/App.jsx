@@ -2,6 +2,8 @@ import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Home } from './pages/Home';
 import About from './pages/About';
+import { Contact } from './pages/Contact';
+import { Projects } from './pages/Projects';
 
 function App() {
   const router = createBrowserRouter([
@@ -12,6 +14,14 @@ function App() {
     {
       path: '/reval-world-sample2/about',
       element: <About />
+    },
+    {
+      path: '/reval-world-sample2/contact',
+      element : <Contact/>
+    },
+    {
+      path: "/reval-world-sample2/projects",
+      element: <Projects/>
     }
 
   ])
