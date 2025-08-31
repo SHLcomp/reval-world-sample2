@@ -38,11 +38,12 @@ nav {
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-wrap: nowrap;
       list-style: none;
       gap: 20px;
       max-width: 100% !important; //solved the screen prblm
       z-index: 900 !important;
-      width: 100% !important;
+      width: auto !important;
 
       li {
         cursor: pointer;
@@ -55,7 +56,10 @@ nav {
         /* allows shrinking */
         box-sizing: border-box;
         transition: .2s ease;
-        font-size: clamp(23px, 1.6vw, 20px);
+        font-size: clamp(14px, 1.6vw, 20px);
+        // flex-shrink: 0; // prevents text from squishing too much
+        white-space: nowrap; // keeps text on one line
+        width: auto;
 
         &:hover {
           // background: var(--main-color);
