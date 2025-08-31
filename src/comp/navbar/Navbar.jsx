@@ -27,6 +27,12 @@ export const Navbar = () => {
       case "/reval-world-sample2/contact":
         setChooseMenu("Contact");
         break;
+        case "/reval-world-sample2/colors":
+        setChooseMenu("Colors");
+        break;
+        case "/reval-world-sample2/industrial":
+        setChooseMenu("Industrial");
+        break;
       default:
         setChooseMenu("Home");
     }
@@ -45,6 +51,9 @@ export const Navbar = () => {
           <li className={chooseMenu === "Projects" ? "clicked" : ""}> <Link className="a" to='/reval-world-sample2/projects'> Projects</Link></li>
           <li className={chooseMenu === "About Us" ? "clicked" : ""}> <Link className="a" to='/reval-world-sample2/about'> About Us</Link></li>
           <li className={chooseMenu === "Contact" ? "clicked" : ""}> <Link className="a" to='/reval-world-sample2/contact'>Contact</Link> </li>
+          <li className={chooseMenu === "Colors" ? "clicked" : ""}> <Link className="a" to='/reval-world-sample2/colors'>Colors</Link> </li>
+          <li className={chooseMenu === "Colors" ? "clicked" : ""}> <Link className="a" to='/reval-world-sample2/colors'>UPVC</Link> </li>
+          <li className={chooseMenu === "Industrail" ? "clicked" : ""}> <Link className="a" to='/reval-world-sample2/Industrial'>Industrial</Link> </li>
         </ul>
         <ul className="contact-info">
           <li><i className="fa-solid fa-phone"></i>+966 123456789</li>

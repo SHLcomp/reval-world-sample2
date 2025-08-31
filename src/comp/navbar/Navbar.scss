@@ -1,10 +1,10 @@
 nav {
   display: flex !important;
   justify-content: space-around !important;
+  align-items: center !important;
+  text-align: center !important;
   width: 100%;
   font-family: var(--nav-font-family);
-  align-items: center !important;
-  text-align: center;
   background: var(--nav-bg);
   filter: drop-shadow(2px 2px 4px gray);
   min-height: 5vh;
@@ -15,6 +15,8 @@ nav {
   position: fixed;
   z-index: 10000;
   font-size: clamp(14px, 2vw, 22px);
+
+
 
   h1 {
     font-family: var(--main-font);
@@ -28,16 +30,19 @@ nav {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    text-align: center;
+    text-align: center !important;
     min-width: 60vw;
+    margin: 0;
+    padding: 0;
     // width: 100%;
     // padding-inline: 70px;
     // position: relative;
 
     .dropdown {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      align-self: center !important;
       flex-wrap: nowrap;
       list-style: none;
       gap: 25px !important;
@@ -49,7 +54,7 @@ nav {
         cursor: pointer;
         //padding-inline: 10px;
         border-radius: 20px;
-        padding-block: 10px;
+        padding-block: 10px !important;
         width: 100% !important;
         /* fills parent, no extra width */
         min-width: 0;
@@ -221,4 +226,82 @@ nav {
 
     }
   }
+}
+
+@media (min-width:600px) and (max-width:1380px) {
+  .dropdown {
+    box-sizing: border-box;
+    /* include padding inside width */
+    overflow: hidden;
+    // display: flex;
+    gap: 10px;
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    /* right under nav */
+    left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100%;
+    background: var(--nav-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    /* Hide off-screen without affecting page width */
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+
+    &.show {
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    li {
+      width: 100% !important;
+      text-align: center;
+
+      &:nth-child(2) {
+        display: none;
+      }
+
+      &.clicked {
+        background: transparent !important;
+        color: var(--main-color) !important;
+      }
+
+      &.clicked .a {
+        background: transparent !important;
+        color: var(--main-color);
+      }
+
+      &:hover {
+        background: transparent !important;
+        color: black;
+      }
+
+      &:hover .a {
+        color: black;
+      }
+    }
+  }
+
+   .contact-info {
+        padding-left: 5px;
+        font-size: .4em;
+        padding-top: 10px;
+        li {
+          max-width: 100%;
+          width: 100%;
+          min-width: 100px;
+        }
+
+        #menuBar {
+          display: block !important;
+          cursor: pointer;
+        }
+      }
 }
